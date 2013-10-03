@@ -16,7 +16,7 @@ From the default Yeoman Generator:
 >Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
 
-To install Yeoman you will need to have npm (node packaged modules) installed. It comes with <a href="http://nodejs.org/" target="_blank">Node</a>. You can install Node by using the downloader or through Brew. I like Brew. If you use Brew you'll need to add this to your .bash_profile. 
+To install Yeoman you will need to have npm (node packaged modules) installed. It comes with <a href="http://nodejs.org/" target="_blank">Node</a>. You can install Node by using the downloader or through <a href="http://brew.sh/" target="_blank">Brew</a>. I like Brew. If you use Brew you'll need to add this to your .bash_profile. 
 
 ```
 homebrew=/usr/local/share/npm/bin
