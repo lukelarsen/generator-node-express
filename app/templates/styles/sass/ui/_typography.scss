@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * GLOBAL
+ * COLORS
+ * LOAD FONTS
+ * ICONS
+ * HEADINGS
+ * LINKS
+ * ICONS
+ * OTHER
+*/
+
+
+
+
+
+/*------------------------------------*\
+    $GLOBAL
+\*------------------------------------*/
+
+html{
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+
+// See _color.scss
+
+
+
+
+
+/*------------------------------------*\
+    $LOAD FONTS
+\*------------------------------------*/
+
+// Example
+
+// @include font-face("Icons", "../fonts/Icons");
+
+
+
+
+
+
+/*------------------------------------*\
+    $ICONS
+\*------------------------------------*/
+
+[data-icon]:before {
+    content: attr(data-icon);
+    text-transform: none;
+    font-weight: normal;
+    font-variant: normal;
+    font-family: 'Icons';
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a{
+    // @include transition (color .2s ease-in);  // You can use this if Bourbon is installed
+    color: $gray6;
+
+    &:hover{ color: $brand-color; }
+}
+
+
+
+
+
+/*------------------------------------*\
+    $OTHER
+\*------------------------------------*/
+
+strong, 
+.bold{ font-weight: bold; }
+
+em{ font-style: italic; }
+
+.no-underline{ text-decoration: none; }
+
+::selection {
+    background: $color1;
+    color: $white;
+}
+::-moz-selection {
+    background: $color1;
+    color: $white;
+}

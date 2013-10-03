@@ -1,0 +1,147 @@
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+/**
+ * OBJECTS-AND-ABSTRACTIONS
+ * OVERRIDES
+ * CUSTOM
+    ^ COLORS
+    ^ FONTS
+    ^ CUSTOM FONT MIXINS
+*/
+
+/**
+ * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if inuit.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. inuit.css ignores its own variables in favour of
+ * using your own, so you can completely modify how inuit.css works without ever
+ * having to alter the framework itself.
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * All of inuit.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
+ */
+$use-grids:         false;
+$use-flexbox:       false;
+$use-columns:       false;
+$use-nav:           false;
+$use-options:       false;
+$use-pagination:    false;
+$use-breadcrumb:    false;
+$use-media:         false;
+$use-marginalia:    false;
+$use-island:        false;
+$use-block-list:    false;
+$use-matrix:        false;
+$use-split:         false;
+$use-this-or-this:  false;
+$use-link-complex:  false;
+$use-flyout:        false;
+$use-arrows:        false;
+$use-sprite:        false;
+$use-icon-text:     false;
+$use-beautons:      false;
+$use-lozenges:      false;
+$use-rules:         false;
+$use-stats:         false;
+$use-greybox:       false;
+
+
+
+
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/**
+ * Place any variables that should override inuit.css’ defaults here.
+ */
+$debug-mode:            false;
+
+$responsive:            true;
+
+$brand-color:           #D70014;
+$brand-face:            'Helvetica Neue', sans-serif;
+
+$base-font-family:      $brand-face;
+
+$base-line-height:      24px;
+
+
+/**
+ * Other overrides to inuit
+ */
+label{ cursor:default !important; }
+.form-fields input[type=text]{ cursor: text;}
+.check-list label{ cursor: pointer !important }
+
+
+
+
+
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of inuit.css here.
+ */
+
+/**
+ * ^COLORS 
+ */
+$color1:            $brand-color;           // red
+$color2:            #2F7DC4;                // blue
+$color2--dark:      darken($color2, 14%);   // dark blue
+$color2--light:     lighten($color2, 8%);   // light blue
+$color3:            #6CBA16;                // green
+$color4:            #FFA501;                // orange
+$color5:            #8A2CA1;                // orange
+
+$linkedin:          #00659B;
+$facebook:          #3B5895;
+$twitter:           #63CDF7;
+$google:            #FF0017;
+$pinterest:         #CE1E1F;
+$mail:              $color3;
+
+$white:             #FFF;
+$gray1:             #F7F7F7;
+$gray2:             #EEE;
+$gray3:             #D8D8D8;
+$gray4:             #9A9EA1;
+$gray5:             #808284;
+$gray6:             #58585B;
+$black:             #000;
+
+
+/**
+ * ^FONTS
+ */
+$sans-serif:        $brand-face;
+$serif:             "Georgia", serif;
+
+/**
+ * ^CUSTOM FONT MIXINS 
+ */
+@mixin sans-serif-extra-light{
+    font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 200;
+    font-style: normal;
+}
+
+@mixin serif{
+    font-family: $serif;
+    font-weight: 100;
+}

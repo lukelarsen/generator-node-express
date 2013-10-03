@@ -1,0 +1,119 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * TEXT
+ * BACKGROUND
+ * BORDERS
+ * BLOCKS
+*/
+
+
+
+
+
+/*------------------------------------*\
+    $TEXT
+\*------------------------------------*/
+
+body                                { color: $gray5; }
+
+// Grays
+.white                              { color: $white; }
+.gray1                              { color: $gray1; }
+.gray2                              { color: $gray2; }
+.gray3                              { color: $gray3; }
+.gray4                              { color: $gray4; }
+.gray5                              { color: $gray5; }
+.gray6                              { color: $gray6; }
+.black                              { color: $black; }
+
+// Social Colors
+.color-twitter,
+.hover-color-twitter:hover          { color: $twitter; }
+
+.color-linkedin,
+.hover-color-linkedin:hover         { color: $linkedin; }
+
+.color-facebook,
+.hover-color-facebook:hover         { color: $facebook; }
+
+.color-google,
+.hover-color-google:hover           { color: $google; }
+
+.color-mail,
+.hover-color-mail:hover             { color: $mail; }
+
+// Colors
+.color1,
+.hover-color1:hover,
+.hover-color1.active                { color: $color1 !important; }
+
+.color2,
+.hover-color2:hover,
+.hover-color2.active                { color: $color2 !important; }
+
+.color3,
+.hover-color3:hover,
+.hover-color3.active                { color: $color3 !important; }
+
+.color4,
+.hover-color4:hover,
+.hover-color4.active                { color: $color4 !important; }
+
+.color5,
+.hover-color5:hover,
+.hover-color5.active                { color: $color5 !important; }
+
+
+
+
+
+/*------------------------------------*\
+    $BACKGROUND
+\*------------------------------------*/
+
+.bg-white                           { background-color: $white; }
+.bg-gray1                           { background-color: $gray1; }
+.bg-gray2                           { background-color: $gray2; }
+.bg-gray3                           { background-color: $gray3; }
+.bg-gray4                           { background-color: $gray4; }
+.bg-gray5                           { background-color: $gray5; }
+.bg-gray6                           { background-color: $gray6; }
+.bg-black                           { background-color: $black; }
+
+.bg-color1                          { background-color: $color1; }
+.bg-color2                          { background-color: $color2; }
+.bg-color3                          { background-color: $color3; }
+.bg-color4                          { background-color: $color4; }
+.bg-color5                          { background-color: $color5; }
+
+
+.bg-gray4,
+.bg-gray5,
+.bg-gray6,
+.bg-black,
+.bg-color1,
+.bg-color2,
+.bg-color3,
+.bg-color4,
+.bg-color5{
+    color: $white;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $BORDERS
+\*------------------------------------*/
+
+.border-color1          { border-color: $color1; }
+.border-color2          { border-color: $color2; }
+.border-color3          { border-color: $color3; }
+.border-color4          { border-color: $color4; }
+
+.border-none{
+    border: none !important;
+}

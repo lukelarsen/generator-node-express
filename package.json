@@ -1,0 +1,45 @@
+{
+  "name": "generator-node-express",
+  "version": "0.0.1",
+  "description": "A generator for Yeoman that will kick start a Node Application using Express.",
+  "keywords": [
+    "yeoman-generator",
+    "Express",
+    "Handlebars-Express3",
+    "Inuit.css",
+    "Bourbon"
+  ],
+  "homepage": "https://github.com/lukelarsen/generator-node-express",
+  "bugs": "https://github.com/lukelarsen/generator-node-express/issues",
+  "author": {
+    "name": "Luke",
+    "email": "luke@lukelarsen.com",
+    "url": "https://github.com/lukelarsen"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lukelarsen/generator-node-express.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.13.0"
+  },
+  "devDependencies": {
+    
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0-rc.1"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

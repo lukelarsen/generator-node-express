@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * BASE
+ * SIZES
+ * COLORS
+    ^Colors
+    ^Hover
+*/
+
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+// Example
+
+// .btn{
+//     @include font-size(14px);
+//     @include transition (all .2s ease-in-out);
+//     display:inline-block;
+//     margin:0 0 10px 0;
+//     padding-top: 1px;
+//     padding-right: 2em;
+//     padding-bottom: 0;
+//     padding-left: 2em;
+//     border: none;
+//     vertical-align: middle;
+//     white-space: nowrap;
+//     line-height: 2.9;
+//     cursor: pointer;
+
+//     &,
+//     &:hover{
+//         text-decoration:none;
+//     }
+
+//     &:active,
+//     &:focus{
+//         outline:none;
+//     }
+
+// }
+
+
+
+
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+
+// Example
+
+// .btn--small{
+//     padding-top: 4px;
+//     padding-bottom: 3px;
+//     padding-right:1.5em;
+//     padding-left: 1.5em;
+//     line-height:2;
+//     @include font-size(12px);
+// }
+
+
+
+
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+
+/**
+ * Colors
+ */
+
+ // Example
+
+// .btn--color1{
+//     @extend .bg-color1;
+//     color: $white;
+//     &:hover{
+//         background-color: $color1;
+//     }
+// }
+
+
+
+
+
+
+/**
+ * HOVERS
+ */
+
+// Example
+
+// .btn--color1, .btn--color2, .btn--color3, .btn--color4, .btn--gray4{
+//     &:hover{
+//         color: $white;
+//     }
+// }

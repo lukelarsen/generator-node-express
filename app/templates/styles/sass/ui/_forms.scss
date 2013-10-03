@@ -1,0 +1,98 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * OVERRIDES
+ * LABELS
+ * INPUTS
+ * ERRORS
+ * SIZES
+*/
+
+
+
+
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+
+input[type=text]:active,
+input[type=text]:focus,
+input[type=password]:active,
+input[type=password]:focus{
+    cursor:text;
+    outline:none;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $LABELS
+\*------------------------------------*/
+
+label,
+.label{
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    $INPUTS
+\*------------------------------------*/
+
+.text-input input,
+textarea{
+    
+    &:focus{
+
+    }
+}
+
+
+
+
+
+/*------------------------------------*\ 
+    $ERRORS    
+\*------------------------------------*/
+
+.field-with-errors{
+    position: relative;
+    display: inline-block;
+
+    label,
+    .label{
+        color: $color4;
+    }
+
+    input,
+    // If using Select2
+    .select2-container .select2-choice,
+    .select2-container-multi .select2-choices{
+        border-color: $color4 !important;
+    }
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+
+// The normal size is applied by default
+
+/**
+ * Small
+ */
+.form-fields__small input[type=text], .spoken-form input[type=text]{
+
+}
