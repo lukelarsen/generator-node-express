@@ -1,4 +1,4 @@
-# generator-node-express [![Build Status](https://secure.travis-ci.org/lukelarsen/generator-node-express.png?branch=master)](https://travis-ci.org/lukelarsen/generator-node-express)
+# generator-node-express
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -10,13 +10,13 @@ A generator for [Yeoman](http://yeoman.io).
 ![](http://i.imgur.com/JHaAlBJ.png)
 
 From the default Yeoman Generator:
-```
+---
 Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
 
 Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-```
+---
 
-To install Yeoman you will need to have npm (node packaged modules) installed. It comes with Node. You can install Node by using the downloader or through Brew. I like Brew. If you use Brew you'll need to add this to your .bash_profile. 
+To install Yeoman you will need to have npm (node packaged modules) installed. It comes with <a href="http://nodejs.org/" target="_blank">Node</a>. You can install Node by using the downloader or through Brew. I like Brew. If you use Brew you'll need to add this to your .bash_profile. 
 
 ```
 homebrew=/usr/local/share/npm/bin
@@ -142,6 +142,11 @@ heroku create
 Deploy your code
 ```
 git push heroku master
+```
+
+To ensure that Heroku is setup to use your production settings you'll need to run this:
+```
+$ heroku config:set NODE_ENV=production
 ```
 
 Open the project
