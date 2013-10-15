@@ -20,7 +20,7 @@
         <![endif]-->
 
         <header>
-            <div class="brand"></div>
+            <a href="#" class="brand"></a>
             <ul class="nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -34,8 +34,9 @@
            Footer Content 
         </footer>
 
-        <!-- build:js(assets) scripts/scripts.js -->
-
+        <!-- build:js(assets) scripts/scripts.js --><% if (useAngular) { %>
+        <script src="bower_components/angular/angular.js"></script><% } %><% if (useJQuery) { %>
+        <script src="bower_components/jquery/jquery.js"></script><% } %>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

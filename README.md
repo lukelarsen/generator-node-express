@@ -46,8 +46,8 @@ This generator uses some tools I find useful. Those include:
     <li><a href="https://github.com/ericf/express3-handlebars" target="_blank">Express3-Handlebars</a> for templating</li>
     <li><a href="http://sass-lang.com/" target="_blank">Sass</a> for styling</li>
     <li>Javascript linting</li>
-    <li>It will open your project in <a href="http://www.sublimetext.com/2" target="_blank">SublimeText2</a></li>
-    <li>It will open your project in Chrome to preview</li>
+    <li>It will open your project in your editor of choice</li>
+    <li>It will open your project in a browser of your choice</li>
     <li>It will watch for changes to your files and recompile or restart the server if needed.</li>
     <li>Uses <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en" target="_blank">LiveReload</a> to refresh the browser when saving</li>
     <li>It will build a production version of your app when you are ready to deploy</li>
@@ -58,6 +58,8 @@ Optional tools
 <ul>
     <li><a href="http://inuitcss.com/" target="_blank">Inuit.css</a> - A powerful designless Sass framework</li>
     <li><a href="http://bourbon.io/" target="_blank">Bourbon</a> - Sass mixin library</li>
+    <li><a href="http://angular.com/" target="_blank">Angular</a></li>
+    <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
 </ul>
 
 ### Installing this generator
@@ -91,11 +93,11 @@ Once Yeoman is done setting up your project run this command to start working on
 $ grunt workon
 ```
 
-This starts the server, launches the project in SublimeText2, opens the project in Chrome, and starts watching the project for changes.
+This starts the server, launches the project in your editor, opens the project in a browser, and starts watching the project for changes.
 
 <h4>LiveReload</h4>
 
-The enable LiveRelaod you'll need to install the Chrome extension.
+To enable LiveRelaod you'll need to install the Chrome extension.
 
 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" target="_blank">Live Reload Chrome extension</a>
 
@@ -104,7 +106,7 @@ Once installed and the project is running just turn on the Chrome Extension.
 
 <h4>Restarting the server</h4>
 
-When you edit files that need the server to restart for you to see the changes most of the time Grunt will just restart it for you. There are times when it gets stuck though. If this happens you can run this command to start it back up without reopening the project in Sublime and Chrome.
+When you edit files that need the server to restart for you to see the changes, most of the time Grunt will just restart it for you. There are times when it gets stuck though. If this happens you can run this command to start it back up without reopening the project in your editor and browser.
 
 ```
 $ grunt restart
@@ -145,6 +147,7 @@ git push heroku master
 ```
 
 To ensure that Heroku is setup to use your production settings you'll need to run this:
+
 ```
 $ heroku config:set NODE_ENV=production
 ```
@@ -158,7 +161,4 @@ heroku open
 
 <ul>
     <li>Add test driven development.</li>
-    <li>How the generator reacts to your answers is a bit sloppy. I need to figure a better way.</li>
-    <li>Add a question so you can choose your favorite Editor so the project could open up in something other than SublimeText.</li>
-    <li>Add a question so you can choose your favorite Browser so the project could open up in something other than Chrome.</li>
 </ul>

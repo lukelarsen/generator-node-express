@@ -18,7 +18,7 @@
     @media
         only screen and (-webkit-min-device-pixel-ratio: 2),
         only screen and (min-resolution: 192dpi) {
-            background-image: url('../images/$image');
+            background-image: url('../images/#{$image}');
             background-size: $width $height;
     }
 }

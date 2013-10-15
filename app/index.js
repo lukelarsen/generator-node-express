@@ -28,28 +28,174 @@ NodeExpressGenerator.prototype.askFor = function askFor() {
       message: 'What would you like to call your project?'
     },
     {
-      name: 'useInuit',
-      type: 'confirm',
-      message: 'Would you like to use Inuit.css?',
-      default: true
+      name: 'features',
+      type: 'checkbox',
+      message: 'Would you like to use any of these?\n    Use the arrow keys to move and space to check/uncheck.',
+      choices: [{
+        name: 'Inuit.css',
+        value: 'useInuit',
+        checked: true
+      },
+      {
+        name: 'Bourbon',
+        value: 'useBourbon',
+        checked: true
+      },
+      {
+        name: 'Angular',
+        value: 'useAngular',
+        checked: true
+      },
+      {
+        name: 'jQuery',
+        value: 'useJQuery',
+        checked: false
+      }]
     },
     {
-      name: 'useBourbon',
+      name: 'editors',
+      type: 'checkbox',
+      message: 'Which editor will you be developing in?\n    Please select only one.\n    (We use this to launch the project in your editor.)',
+      choices: [{
+        name: 'Sublime Text 2',
+        value: 'useSublimeText2',
+        checked: true
+      },
+      {
+        name: 'WebStorm',
+        value: 'useWebStorm',
+        checked: false
+      },
+      {
+        name: 'Coda2',
+        value: 'useCoda2',
+        checked: false
+      },
+      {
+        name: 'Chocolat',
+        value: 'useChocolat',
+        checked: false
+      },
+      {
+        name: 'TextMate',
+        value: 'useTextMate',
+        checked: false
+      },
+      {
+        name: 'None',
+        value: 'useNone',
+        checked: false
+      }]
+    },
+    {
+      name: 'browsers',
+      type: 'checkbox',
+      message: 'Which browser do you primarily use in developement?\n    Please select only one.\n    (We use this to launch your project in your browser.)',
+      choices: [{
+        name: 'Google Chrome',
+        value: 'useGoogleChrome',
+        checked: true
+      },
+      {
+        name: 'Firefox',
+        value: 'useFirefox',
+        checked: false
+      },
+      {
+        name: 'Safari',
+        value: 'useSafari',
+        checked: false
+      },
+      {
+        name: 'Opera',
+        value: 'useOpera',
+        checked: false
+      }]
+    },
+    {
+      name: 'heroku',
       type: 'confirm',
-      message: 'Would you like to use Bourbon?',
+      message: 'Will you be deploying to Heroku?',
       default: true
-    }
+    } 
   ];
 
-  this.prompt(prompts, function (props) {
-    this.projectName = props.projectName;
-    this.useInuit = props.useInuit;
-    this.useBourbon = props.useBourbon;
+  this.prompt(prompts, function (answers) {
+  // this.prompt(prompts, function (answers) {
+
+    this.projectName = answers.projectName;
+
+    // features
+    var features = answers.features;
+    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
+    
+    this.useInuit = hasFeature('useInuit');
+    this.useBourbon = hasFeature('useBourbon');
+    this.useAngular = hasFeature('useAngular');
+    this.useJQuery = hasFeature('useJQuery');
+
+    // editors
+    var editors = answers.editors;
+    function hasEditor(edit) { return editors.indexOf(edit) !== -1; }
+
+    this.useSublimeText2 = hasEditor('useSublimeText2');
+    this.useWebStorm = hasEditor('useWebStorm');
+    this.useCoda2 = hasEditor('useCoda2');
+    this.useChocolat = hasEditor('useChocolat');
+    this.useTextMate = hasEditor('useTextMate');
+    this.useNone = hasEditor('useNone');
+
+    // browsers
+    var browsers = answers.browsers;
+    function hasBrowser(browse) { return browsers.indexOf(browse) !== -1; }
+
+    this.useGoogleChrome = hasBrowser('useGoogleChrome');
+    this.useFirefox = hasBrowser('useFirefox');
+    this.useSafari = hasBrowser('useSafari');
+    this.useOpera = hasBrowser('useOpera');
+
+    // heroku
+    this.heroku = answers.heroku;
+
     cb();
   }.bind(this));
 };
 
-NodeExpressGenerator.prototype.app = function app() {
+
+NodeExpressGenerator.prototype.gruntfile = function gruntfile() {
+  this.copy('Gruntfile.js', 'Gruntfile.js');
+};
+
+NodeExpressGenerator.prototype.packageJSON = function packageJSON() {
+  this.copy('_package.json', 'package.json');
+};
+
+NodeExpressGenerator.prototype.git = function git() {
+  this.copy('gitignore', '.gitignore');
+};
+
+NodeExpressGenerator.prototype.bower = function bower() {
+  this.copy('bowerrc', '.bowerrc');
+  this.copy('_bower.json', 'bower.json');
+};
+
+NodeExpressGenerator.prototype.jshint = function jshint() {
+  this.copy('jshintrc', '.jshintrc');
+};
+
+NodeExpressGenerator.prototype.editorConfig = function editorConfig() {
+  this.copy('editorconfig', '.editorconfig');
+};
+
+NodeExpressGenerator.prototype.views = function views() {
+  this.mkdir('views');
+  this.mkdir('views/layouts');
+  this.mkdir('views/partials');
+  this.copy('views/index.handlebars', 'views/index.handlebars');
+  this.copy('views/layouts/main.handlebars', 'views/layouts/main.handlebars');
+};
+
+NodeExpressGenerator.prototype.assets = function assets() {
   this.mkdir('assets');
   this.mkdir('assets/font');
   this.mkdir('assets/images');
@@ -57,22 +203,9 @@ NodeExpressGenerator.prototype.app = function app() {
   this.mkdir('assets/styles');
   this.mkdir('assets/styles/sass');
   this.mkdir('assets/styles/sass/ui');
-  this.mkdir('views');
-  this.mkdir('views/layouts');
-  this.mkdir('views/partials');
-
+  
   this.copy('styles/sass/_mixins.scss', 'assets/styles/sass/_mixins.scss');
   this.copy('styles/sass/_vars.scss', 'assets/styles/sass/_vars.scss');
-
-  if (this.useInuit && this.useBourbon) {
-    this.copy('styles/sass/screenAll.scss', 'assets/styles/sass/screen.scss');
-  } else if (this.useInuit && !this.useBourbon) {
-    this.copy('styles/sass/screenInuit.scss', 'assets/styles/sass/screen.scss'); 
-  } else if (!this.useInuit && this.useBourbon) {
-    this.copy('styles/sass/screenBourbon.scss', 'assets/styles/sass/screen.scss');
-  } else {
-    this.copy('styles/sass/screenNone.scss', 'assets/styles/sass/screen.scss');
-  }
 
   this.copy('styles/sass/ui/_buttons.scss', 'assets/styles/sass/ui/_buttons.scss');
   this.copy('styles/sass/ui/_color.scss', 'assets/styles/sass/ui/_color.scss');
@@ -83,34 +216,22 @@ NodeExpressGenerator.prototype.app = function app() {
   this.copy('styles/sass/ui/_navs.scss', 'assets/styles/sass/ui/_navs.scss');
   this.copy('styles/sass/ui/_scaffolding.scss', 'assets/styles/sass/ui/_scaffolding.scss');
   this.copy('styles/sass/ui/_typography.scss', 'assets/styles/sass/ui/_typography.scss');
-
-  this.copy('views/index.handlebars', 'views/index.handlebars');
-  this.copy('views/layouts/main.handlebars', 'views/layouts/main.handlebars');
+  
+  this.copy('styles/sass/screen.scss', 'assets/styles/sass/screen.scss');
 
   this.copy('favicon.ico', 'assets/favicon.ico');  
-
-  this.copy('app.js', 'app.js');
-  this.copy('Gruntfile.js', 'Gruntfile.js');
-  this.copy('Procfile', 'Procfile');
-  this.copy('README.md', 'README.md');
-
-  if (this.useInuit && this.useBourbon) {
-    this.copy('_bowerAll.json', 'bower.json');  
-  } else if (this.useInuit && !this.useBourbon) {
-    this.copy('_bowerInuit.json', 'bower.json');  
-  } else if (!this.useInuit && this.useBourbon) {
-    this.copy('_bowerBourbon.json', 'bower.json');  
-  } else {
-    this.copy('_bowerNone.json', 'bower.json');  
-  }
-  
-  this.copy('_package.json', 'package.json');
-  
 };
 
-NodeExpressGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('bowerrc', '.bowerrc');
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('gitignore', '.gitignore');
-  this.copy('jshintrc', '.jshintrc');
+NodeExpressGenerator.prototype.app = function app() {
+  this.copy('app.js', 'app.js');
+};
+
+NodeExpressGenerator.prototype.procfile = function procfile() {
+  if (this.heroku) {
+    this.copy('Procfile', 'Procfile');
+  }
+};
+
+NodeExpressGenerator.prototype.readme = function readme() {
+  this.copy('README.md', 'README.md');
 };

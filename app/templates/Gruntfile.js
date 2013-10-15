@@ -105,13 +105,21 @@ module.exports = function (grunt) {
         // Open Config
         open: {
             site: {
-                path: 'http://localhost:3000',
-                app: 'Google Chrome'
+                path: 'http://localhost:3000',<% if (useGoogleChrome) { %>
+                app: 'Google Chrome'<% } %><% if (useFirefox) { %>
+                app: 'Firefox'<% } %><% if (useSafari) { %>
+                app: 'Safari'<% } %><% if (useOpera) { %>
+                app: 'Opera'<% } %>
             },
-            sublime: {
-                path: './',
-                app: 'Sublime Text 2'
-            }
+            editor: {
+                path: './',<% if (useSublimeText2) { %>
+                app: 'Sublime Text 2'<% } %><% if (useWebStorm) { %>
+                app: 'WebStorm'<% } %><% if (useCoda2) { %>
+                app: 'Coda 2'<% } %><% if (useChocolat) { %>
+                app: 'Chocolat'<% } %><% if (useTextMate) { %>
+                app: 'TextMate'<% } %><% if (useNone) { %>
+                app: ''<% } %>
+            },
         },
 
         // Rev Config
@@ -254,11 +262,11 @@ module.exports = function (grunt) {
     // Register Tasks
     // Workon
     grunt.registerTask('workon', 'Start working on this project.', [
-        // 'jshint',
+        'jshint',
         'sass:dev',
         'express:dev',
         'open:site',
-        'open:sublime',
+        'open:editor',
         'watch'
     ]);
 

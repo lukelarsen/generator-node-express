@@ -2,10 +2,6 @@
 /*------------------------------------*\
     SCREEN.CSS
 \*------------------------------------*/
-/**
- * Here we pull in Bourbon, some variables, and add some mixins,
- * then add our project-specific components afterwards.
- */
 
 
 
@@ -13,9 +9,10 @@
 
 /**
  * Setup
- */
-@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "vars";
+ */<% if (useBourbon) { %>
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";<% } %>
+@import "vars";<% if (useInuit) { %>
+@import "../../bower_components/inuit.css/inuit";<% } %>
 @import "mixins";  // Custom mixins
 
 
