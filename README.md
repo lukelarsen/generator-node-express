@@ -64,16 +64,10 @@ Optional tools
 
 ### Installing this generator
 
-Most generators can be installed the same way you installed Yeoman. This generator hasn't made it into the Yeoman registry yet. In order to use it you will need to download it to a directory of your choice, then cd to that directory and run this command:
+With Node and npm installed run this to install.
 
 ```
-$ npm link
-```
-
-This enables you to access the generator globally to run it. You won't need to do that once this generator makes it into the registry. If you'd like to remove this link in the future you can use this command:
-
-```
-$npm unlink node-express
+$ npm install -g generator-node-express
 ```
 
 
