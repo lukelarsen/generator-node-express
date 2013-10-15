@@ -58,7 +58,7 @@ Optional tools
 <ul>
     <li><a href="http://inuitcss.com/" target="_blank">Inuit.css</a> - A powerful designless Sass framework</li>
     <li><a href="http://bourbon.io/" target="_blank">Bourbon</a> - Sass mixin library</li>
-    <li><a href="http://angular.com/" target="_blank">Angular</a></li>
+    <li><a href="http://angularjs.org/" target="_blank">Angular</a></li>
     <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
 </ul>
 
