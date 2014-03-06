@@ -112,8 +112,8 @@ module.exports = function (grunt) {
                 app: 'Opera'<% } %>
             },
             editor: {
-                path: './',<% if (useSublimeText2) { %>
-                app: 'Sublime Text 2'<% } %><% if (useWebStorm) { %>
+                path: './',<% if (useSublimeText) { %>
+                app: 'Sublime Text'<% } %><% if (useWebStorm) { %>
                 app: 'WebStorm'<% } %><% if (useCoda2) { %>
                 app: 'Coda 2'<% } %><% if (useChocolat) { %>
                 app: 'Chocolat'<% } %><% if (useTextMate) { %>
