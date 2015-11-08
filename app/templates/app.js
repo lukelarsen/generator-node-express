@@ -65,5 +65,6 @@ app.get('/', function(request, response, next) {
 /*
  * Start it up
  */
-app.listen(process.env.PORT || port);
+var port = process.env.PORT || port;
+app.listen(port);
 console.log('Express started on port ' + port);
