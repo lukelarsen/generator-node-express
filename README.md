@@ -91,7 +91,7 @@ This starts the server, launches the project in your editor, opens the project i
 
 <h4>LiveReload</h4>
 
-To enable LiveRelaod you'll need to install the Chrome extension.
+To enable LiveReload you'll need to install the Chrome extension.
 
 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" target="_blank">Live Reload Chrome extension</a>
 
