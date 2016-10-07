@@ -57,8 +57,8 @@ NodeExpressGenerator.prototype.askFor = function askFor() {
       type: 'checkbox',
       message: 'Which editor will you be developing in?\n    Please select only one.\n    (We use this to launch the project in your editor.)',
       choices: [{
-        name: 'Sublime Text 2',
-        value: 'useSublimeText2',
+        name: 'Sublime Text',
+        value: 'useSublimeText',
         checked: true
       },
       {
